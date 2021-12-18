@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const MinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -43,10 +42,16 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[name].[hash][ext]',
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'assets/fonts/[name].[hash][ext]',
+        },
       },
     ],
   },
@@ -58,9 +63,6 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/styles.[contenthash].css',
-    }),
-    new CopyPlugin({
-      patterns: [{ from: './src/assets/images/', to: 'assets/images' }],
     }),
   ],
   optimization: {
