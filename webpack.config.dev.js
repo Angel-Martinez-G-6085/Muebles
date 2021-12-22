@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const copyPluguin = require('copy-webpack-plugin');
+const fullPaths = require('./src/utils/getLibs');
 
 module.exports = {
   mode: 'development',
@@ -66,6 +68,15 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contentHash].css',
+    }),
+    new copyPluguin({
+      // Se encarga de copiar todas las librerias a la carpeta lib
+      patterns: fullPaths.map((libpath) => {
+        return {
+          from: path.resolve(__dirname, `node_modules/${libpath}`),
+          to: path.resolve(__dirname, './src/lib/'),
+        };
+      }),
     }),
   ],
 };

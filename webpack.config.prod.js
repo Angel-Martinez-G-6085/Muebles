@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const MinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const copyPluguin = require('copy-webpack-plugin');
+const fullPaths = require('./src/utils/getLibs');
 
 module.exports = {
   mode: 'production',
@@ -63,6 +65,15 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/styles.[contenthash].css',
+    }),
+    new copyPluguin({
+      // Se encarga de copiar todas las librerias a la carpeta lib
+      patterns: fullPaths.map((libpath) => {
+        return {
+          from: path.resolve(__dirname, `node_modules/${libpath}`),
+          to: path.resolve(__dirname, './src/lib/'),
+        };
+      }),
     }),
   ],
   optimization: {
