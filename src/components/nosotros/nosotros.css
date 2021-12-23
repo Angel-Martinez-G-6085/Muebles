@@ -1,0 +1,19 @@
+.nosotros-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  column-gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.nosotros-container img {
+  height: 40rem;
+  width: 100%;
+}
+
+.nosotros-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
