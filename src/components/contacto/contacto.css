@@ -1,0 +1,36 @@
+.formulario {
+  margin-bottom: 4rem;
+}
+
+.formulario fieldset {
+  border: 1px solid black;
+  margin-bottom: 2rem;
+}
+
+.formulario legend {
+  background-color: #005485;
+  width: 100%;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 1rem;
+  margin-bottom: 4rem;
+}
+
+.campo {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.campo label {
+  flex-basis: 10rem;
+}
+
+.campo input:not([type='radio']),
+.campo select {
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid #e1e1e1;
+}

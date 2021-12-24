@@ -1,0 +1,61 @@
+<main>
+  <h2 class="text-center">Contacto</h2>
+  <form class="container formulario" action="">
+    <fieldset>
+      <legend>Tus Datos</legend>
+      <div class="campo">
+        <label for="nombre">Nombre</label>
+        <input placeholder="Ingresa tu nombre" id="nombre" type="text" />
+      </div>
+
+      <div class="campo">
+        <label for="asunto">Asunto</label>
+        <input type="text" id="asunto" placeholder="asunto" />
+      </div>
+
+      <div class="campo">
+        <label for="mail">E-mail</label>
+        <input type="email" id="mail" />
+      </div>
+
+      <div class="campo">
+        <label for="tel">Telefono</label>
+        <input type="tel" id="tel" />
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>País</legend>
+      <div class="campo">
+        <label for="select">Asunto</label>
+        <select id="select">
+          <option>-- Seleccione --</option>
+          <option value="MX">Mexico</option>
+        </select>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>información extra</legend>
+
+      <div class="campo">
+        <label for="cliente">Cliente</label>
+        <input id="cliente" type="radio" name="tipo" />
+      </div>
+
+      <div class="campo">
+        <label for="provedor">Provedor</label>
+        <input type="radio" id="provedor" name="tipo" />
+      </div>
+
+      <div class="campo">
+        <label for="categorias">Categorias</label>
+        <input type="list" name="categorias" />
+        <datalist id="categorias">
+          <option value="hogar"></option>
+        </datalist>
+      </div>
+    </fieldset>
+    <input class="btn" type="submit" value="Enviar" />
+  </form>
+</main>
