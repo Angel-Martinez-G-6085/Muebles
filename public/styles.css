@@ -68,10 +68,12 @@ img {
   padding: 1rem;
   transition: background-color 0.3 ease-out;
   text-align: center;
+  border: none;
 }
 
 .btn:hover {
   background-color: #769c02;
+  cursor: pointer;
 }
 
 .black-text {
