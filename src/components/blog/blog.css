@@ -4,8 +4,24 @@
   column-gap: 4rem;
 }
 
+.contenido-blog {
+  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+aside ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .entrada {
   border-bottom: 2px solid #e1e1e1;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .entrada:last-of-type {

@@ -10,10 +10,17 @@
 
 .navegacion-header {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   border-top: 0.1rem solid #e1e1e1;
   padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .navegacion-header {
+    flex-direction: row;
+  }
 }
 
 .navegacion-header .link {

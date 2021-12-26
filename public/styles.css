@@ -24,14 +24,26 @@ h3 {
 }
 
 h1 {
-  font-size: 5rem;
-}
-
-h2 {
   font-size: 4rem;
 }
 
+@media (min-width: 768px) {
+  h1 {
+    font-size: 5rem;
+  }
+}
+
 h2 {
+  font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 4rem;
+  }
+}
+
+h3 {
   font-size: 3rem;
 }
 
